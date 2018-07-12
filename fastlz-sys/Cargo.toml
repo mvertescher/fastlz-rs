@@ -1,0 +1,16 @@
+[package]
+name = "fastlz-sys"
+version = "0.1.0"
+authors = ["Matt Vertescher <mvertescher@gmail.com>"]
+license = "MIT OR Apache-2.0"
+links = "fastlz"
+repository = "https://github.com/mvertescher/fastlz-rs"
+homepage = "https://github.com/mvertescher/fastlz-rs"
+description = """
+Raw bindings to FastLZ
+"""
+categories = ["external-ffi-bindings"]
+build = "build.rs"
+
+[build-dependencies]
+cc = { version = "1", features = ["parallel"] }
