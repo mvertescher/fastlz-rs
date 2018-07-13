@@ -1,4 +1,8 @@
 # fastlz
+[![Build Status](https://travis-ci.com/mvertescher/fastlz-rs.svg?branch=master)](https://travis-ci.com/mvertescher/fastlz-rs)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 Lossless compression/decompression library for Rust with bindings to the C FastLZ implementation.
 
 ## License
