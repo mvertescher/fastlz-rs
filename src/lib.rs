@@ -3,11 +3,14 @@
 //! Rust bindings for the FastLZ compression and decompression library.
 //!
 
-extern crate fastlz_sys;
+#![deny(missing_docs)]
+#![deny(warnings)]
+#![no_std]
+
+use core::ffi::c_void;
 
 use fastlz_sys::fastlz_compress;
 use fastlz_sys::fastlz_decompress;
-use std::os::raw::c_void;
 
 /// Compress a block of data in the input buffer and returns the size of
 /// compressed block. The size of input buffer is specified by length. The
@@ -29,7 +32,7 @@ pub fn compress<'a>(input: &[u8], output: &'a mut [u8]) -> Result<&'a mut [u8], 
     }
 
     let ret: &mut [u8] = unsafe {
-        std::slice::from_raw_parts_mut(out_ptr as *mut _, size as usize)
+        core::slice::from_raw_parts_mut(out_ptr as *mut _, size as usize)
     };
     Ok(ret)
 }
@@ -50,7 +53,7 @@ pub fn decompress<'a>(input: &[u8], output: &'a mut [u8]) -> Result<&'a mut [u8]
         fastlz_decompress(in_ptr, input.len() as i32, out_ptr, output.len() as i32)
     };
     let ret: &mut [u8] = unsafe {
-        std::slice::from_raw_parts_mut(out_ptr as *mut _, size as usize)
+        core::slice::from_raw_parts_mut(out_ptr as *mut _, size as usize)
     };
     Ok(ret)
 }
