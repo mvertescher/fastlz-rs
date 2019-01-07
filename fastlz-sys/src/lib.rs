@@ -1,4 +1,3 @@
-#[allow(bad_style)]
+//! Raw FastLZ FFI bindings
 
-mod bindings;
-pub use bindings::*;
+include!(concat!(env!("OUT_DIR"), "/bindings.rs"));

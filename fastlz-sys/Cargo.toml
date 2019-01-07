@@ -13,4 +13,5 @@ categories = ["external-ffi-bindings"]
 build = "build.rs"
 
 [build-dependencies]
+bindgen = "0.46.0"
 cc = { version = "1", features = ["parallel"] }
