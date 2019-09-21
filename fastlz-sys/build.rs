@@ -11,8 +11,6 @@ fn main() {
 	build.flag("-Wno-unused-parameter");
 
 	let files = [
-        "fastlz/6pack.c",
-        "fastlz/6unpack.c",
         "fastlz/fastlz.c",
 	];
 
@@ -23,6 +21,8 @@ fn main() {
     // Generate bindings
     let bindings = bindgen::Builder::default()
         .header("fastlz/fastlz.h")
+        .use_core()
+        .ctypes_prefix("cty")
         .generate()
         .expect("Unable to generate bindings");
 

@@ -12,6 +12,9 @@ Raw bindings to FastLZ
 categories = ["external-ffi-bindings"]
 build = "build.rs"
 
+[dependencies]
+cty = "0.2.0"
+
 [build-dependencies]
 bindgen = "0.46.0"
 cc = { version = "1", features = ["parallel"] }

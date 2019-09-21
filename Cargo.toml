@@ -12,4 +12,4 @@ Bindings to FastLZ compression and decompression.
 categories = ["compression", "api-bindings"]
 
 [dependencies]
-fastlz-sys = { version = "0.1", path = "./fastlz-sys" }
+fastlz-sys = { path = "./fastlz-sys" }
